@@ -32,25 +32,23 @@ public class BinarySearchTree extends BinaryTree {
 
    public void addEntry(Node v, BTSEntry O) {
       BTSEntry temp = (BTSEntry) v.getData();
-      Node nD = new Node(O);
       if (O.getKey() < temp.getKey()) {
          if (hasLeft(v)) {
             addEntry(left(v), O);
          } else {
-            v.setLeft(nD);
+            insertLeft(v, O);
          }
       } else {
          if (hasRight(v)) {
             addEntry(right(v), O);
          } else {
-            v.setRight(nD);
+            inserRitght(v, O);
          }
       }
    }
 
    public Node Remove(int k) {
       Node v = find(k);
-      Node temp = (Node) v.getData();
       if (hasLeft(v) && hasRight(v)) {
          Node w = predecesor(v);
          v.setData(w.getData());
@@ -58,7 +56,7 @@ public class BinarySearchTree extends BinaryTree {
       } else {
          super.remove(v);
       }
-      return temp;
+      return v;
    }
 
    public Node predecesor(Node v) {
@@ -74,11 +72,19 @@ public class BinarySearchTree extends BinaryTree {
       }
    }
 
+   public Node minNode(Node temp){
+      if(hasLeft(temp)){
+         return minNode(left(temp));
+      }else{
+         return temp;
+      }
+   }
+
    public void Inorder(BinaryTree T,Node v){
       if (T.hasLeft(v)){
          Inorder(T, T.left(v));
       }
-      System.out.println(v.getData());
+      System.out.print(((BTSEntry) v.getData()).getKey() + " ");
       if(T.hasRight(v)){
          Inorder(T, T.right(v));
       }

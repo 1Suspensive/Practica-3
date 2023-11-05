@@ -103,7 +103,7 @@ public class BinaryTree {
         size++;
     }
 
-    public void remove(Node v) {
+    public Node remove(Node v) {
         Node p = parent(v);
         if (hasLeft(v) || hasRight(v)) {
             Node child;
@@ -127,6 +127,7 @@ public class BinaryTree {
             }
         }
         size--;
+        return v;
     }
 
 }
