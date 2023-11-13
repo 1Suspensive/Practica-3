@@ -89,4 +89,24 @@ public class BinarySearchTree extends BinaryTree {
          Inorder(T, T.right(v));
       }
    }
+
+   public void printTree() {
+      printTree(root, 0);
+   }
+
+   private void printTree(Node node, int depth) {
+      if (node == null) {
+         return;
+      }
+
+      printTree(node.getRight(), depth + 1);
+
+      for (int i = 0; i < depth; i++) {
+         System.out.print("   ");
+      }
+
+      System.out.println(((BTSEntry) node.getData()).getKey());
+
+      printTree(node.getLeft(), depth + 1);
+   }
 }

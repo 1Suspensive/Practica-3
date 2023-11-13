@@ -36,7 +36,10 @@ public class Main{
         //Prueba valor Minimo
         //System.out.println(((Person)((BTSEntry) abb.minNode(abb.root()).getData()).getData()).getName());
 
+        System.out.println("Estructura del árbol:");
+        abb.printTree();
         //Prueba InOrder
+        System.out.println("Recorrido Inorder:");
         abb.Inorder(abb, abb.root());
     }
 }
