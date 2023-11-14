@@ -1,4 +1,5 @@
 import Clases.Person;
+import Estructuras.BTSEntry;
 import Estructuras.BinarySearchTree;
 
 public class Main{
@@ -23,9 +24,8 @@ public class Main{
         abb.insert(persona5, persona5.calculateKey());
         abb.insert(persona6, persona6.calculateKey());
 
-        //Prueba Remove no funcionando
-        //System.out.println(((Person)((BTSEntry) abb.Remove(4).getData()).getData()).getName());
-
+        //Prueba Remove
+        //System.out.println(((Person)((BTSEntry) abb.Remove(8).getData()).getData()).getName());
 
         //Prueba Find
         //System.out.println(((Person) ((BTSEntry) ((abb.find(10)).getData())).getData()).getName());
